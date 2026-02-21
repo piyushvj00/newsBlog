@@ -1,0 +1,16 @@
+name: My First CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]  # Jab bhi aap code push karenge, ye chalega
+
+jobs:
+  build_check:
+    runs-on: ubuntu-latest  # Ye GitHub ke cloud computer par chalega
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4  # Aapka code pipeline mein lekar aayega
+
+    - name: Run a Welcome Message
+      run: echo "CI Pipeline is running successfully for NewsBlog!"
